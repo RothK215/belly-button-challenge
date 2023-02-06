@@ -6,9 +6,7 @@ function buildMetadata(sample) {
     let metadata = data.metadata;
     let resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
     let result = resultArray[0];
-
-    let panelBox = d3.select("#sample-metadata");
-    panelBox.html("");
+    let panelBox = d3.select("#sample-metadata").html("");
 
     for (key in result){
       panelBox.append("h6").text(`${key.toUpperCase()}: ${result[key]}`);
